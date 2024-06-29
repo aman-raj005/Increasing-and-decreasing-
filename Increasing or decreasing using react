@@ -1,0 +1,47 @@
+import { useState } from 'react';
+import './App.css';
+ 
+// import Newproduct from './Components/Newproduct';
+
+// import Dateitems from './Components/Dateitems';
+// import Item from './Components/Item';
+
+// import NewProduct from './Components/NewProduct';
+
+
+
+function App() {
+
+   const[ count,setCount]=useState(0);
+ function  mHandler (){
+   setCount(count-1);
+ }
+   function Handler(){
+      setCount(count+1);
+   
+ }
+ function resetHandler(){
+   setCount(0);
+
+}
+   return (
+<div className="wrapper h-screen w-full   flex items-center justify-center shadow-2xl">
+
+ 
+   <div className="container w-3/5 h-1/5 border-2 rounded border-current flex items-center justify-center  flex-col  p-3 bg-blue-500">
+                 <div className="  w-full h-2/4 flex items-center justify-center"><h1 className='text-4xl font-extrabold text-white'>Increase & Decrease </h1></div>
+      
+         <div className="innerbox w-full flex items-center flex-row h-2/6 justify-between">        
+                 <button onClick={mHandler} className=" subtract border-2 rounded border-black h-full w-2/12 flex items-center justify-center text-white text-4xl font-bold bg-red-800">-<i class="fa-solid fa-minus"></i></button>
+                 <div className="count countborder-2 rounded border-black h-full w-2/12 flex items-center justify-center  text-2xl font-bold text-yellow">{count}</div>
+                 <button onClick={Handler} className="add border-2 rounded border-black h-full  w-2/12 flex items-center justify-center text-white text-4xl font-bold bg-red-800">+<i class="fa-solid fa-plus"></i></button>
+        </div>
+                 <button onClick={resetHandler} className='h-1/5 border-2 rounded border-black bg-rose-600 flex items-center justify-center mt-1.5 text-white'>Reset</button>
+    
+   </div>
+      
+</div>
+   )
+}
+
+export default App;
